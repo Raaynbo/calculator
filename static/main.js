@@ -1,4 +1,5 @@
-let firstNumber, secondNumber = undefined;
+// I choosed to use an array to store the numbers
+// let firstNumber, secondNumber = undefined;
 const numbers = [undefined, undefined];
 // position is an integer used to define if the user is selecting the first or the second number 
 let position = 0;
@@ -7,7 +8,6 @@ let operation = undefined;
 const display = document.querySelector(".display");
 const numpad = document.querySelectorAll(".digit");
 const operators = document.querySelectorAll(".operator");
-
 const egal = document.querySelector("#equals");
 
 numpad.forEach(numkey => {
@@ -31,20 +31,19 @@ egal.addEventListener("click", () => {
 });
 
 function add(a, b){
-	console.log("add : ", a+b)
-	return a+b;
+	return a+b.toFixed(2);
 }
 
 function substract(a, b){
-	return a-b;
+	return a-b.toFixed(2);
 }
 
 function divide(a, b){
-	return a/b;
+	return a/b.toFixed(2);
 }
 
 function multiply(a, b){
-	return a*b;
+	return a*b.toFixed(2);
 }
 
 function getInput(input){
@@ -56,11 +55,6 @@ function getInput(input){
 }
 
 function updateDisplay(data){
-	//this if statement doesnt work at this time
-	if (display.textContent == "0000000000"){
-		console.log("removing empty class");
-	}
-	display.classList.remove("empty");
 	display.textContent = data;
 }
 
@@ -85,7 +79,7 @@ function makeCalc(numbers, operation, storeResult){
 			result = divide(intArray[0], intArray[1]);
 			break;
 	}
-	updateDisplay(result.toFixed(2));
+	updateDisplay(result);
 	if (storeResult){
 		numbers[0] = result;
 	}
