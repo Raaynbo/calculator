@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+
 body{
 	margin:0;
 	padding:0;
 	width:100vw;
 	height:100vh;
+	font-family:"Graduate", serif;
+	font-weight:400;
+	font-style:normal;
 }
 
 main{
@@ -31,6 +36,7 @@ main{
 	max-width:25vw;
 	justify-content:center;
 	display:flex;
+	flex-direction:row-reverse;
 	flex-wrap: wrap;
 	align-items:center;
 	gap:30px;
@@ -43,6 +49,7 @@ main{
 }
 
 .btn {
+	border-radius:1rem;
 	padding: 1rem 2rem;
 	text-align:center;
 	outline:solid 1px black;
@@ -51,10 +58,12 @@ main{
 
 .operator {
 	padding:1.5rem 2.5rem;
+	background-color:orange;
 }
 
 .digit{
 	padding:1.6rem 2rem;
+	background-color:rgba(220,220,220,0.6);
 }
 
 .output {
@@ -63,8 +72,14 @@ main{
 	outline: solid 1px black;
 	width:100%;
 	padding: 5px;
+	border-radius:1rem;
 }
 
 .empty {
 	color:gray;
+}
+
+.utils {
+	font-size:15px;
+	padding: 1.6rem 2rem;
 }
