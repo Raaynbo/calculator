@@ -21,7 +21,7 @@ main{
 	justify-content:center;
 	align-items:center;
 	height:100vh;
-	width:35vw;
+	width:500px;
 	margin:0 auto;
 }
 
@@ -32,8 +32,6 @@ main{
 }
 
 .numpad{
-	width:80%;
-	max-width:25vw;
 	justify-content:center;
 	display:flex;
 	flex-direction:row-reverse;
@@ -73,13 +71,24 @@ main{
 	width:100%;
 	padding: 5px;
 	border-radius:1rem;
+	display:flex;
+	align-items:flex-end;
 }
 
 .empty {
 	color:gray;
 }
 
-.utils {
+.utils_zone {
+	margin-left:auto;
+}
+
+
+
+.small-btn{
+	border-radius:0.3rem;
+	padding: 0.3rem 0.6rem;
+	text-align:center;
+	outline:solid 1px black;
 	font-size:15px;
-	padding: 1.6rem 2rem;
 }

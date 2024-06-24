@@ -4,7 +4,7 @@ const numbers = [undefined, undefined];
 let position = 0;
 let operation = undefined;
 
-const display = document.querySelector(".output");
+const display = document.querySelector(".display");
 const numpad = document.querySelectorAll(".digit");
 const operators = document.querySelectorAll(".operator");
 
@@ -66,7 +66,7 @@ function updateDisplay(data){
 
 function makeCalc(numbers, operation, storeResult){
 	let result = 0;
-	const intArray = numbers.map(value => {return parseInt(value)});
+	const intArray = numbers.map(value => {return parseFloat(value)});
 	switch (operation){
 		case "addition":
 			result = add(intArray[0], intArray[1]);
@@ -85,7 +85,7 @@ function makeCalc(numbers, operation, storeResult){
 			result = divide(intArray[0], intArray[1]);
 			break;
 	}
-	updateDisplay(result);
+	updateDisplay(result.toFixed(2));
 	if (storeResult){
 		numbers[0] = result;
 	}

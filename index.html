@@ -12,7 +12,17 @@
 	<main>
 		<div class="container">
 			<div class="output empty">
-				0000000000
+				<div class="display">
+					0000000000
+				</div>
+				<div class="utils_zone">
+					<div class="small-btn" onclick="resetCalc()">
+						C
+					</div>
+					<div class="small-btn " onclick="deleteLastEl();">
+						←
+					</div>
+				</div>
 			</div>
 			<div class="pad">
 				<div class="numpad">
@@ -43,14 +53,14 @@
 					<div class="digit btn" id="1">
 						1
 					</div>
-					<div class="utils btn" onclick="resetCalc()">
-						C
+					<div class="digit btn" id=".">
+						.
 					</div>
 					<div class="digit btn" id="0">
 						0
 					</div>
-					<div class="btn utils" onclick="deleteLastEl();">
-						←
+					<div class="btn digit" id="00">
+						00
 					</div>
 				</div>
 				<div class="operatorpad">
