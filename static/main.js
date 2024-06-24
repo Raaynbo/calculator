@@ -1,5 +1,6 @@
 let firstNumber, secondNumber = undefined;
 const numbers = [undefined, undefined];
+// position is an integer used to define if the user is selecting the first or the second number 
 let position = 0;
 let operation = undefined;
 
@@ -51,7 +52,7 @@ function getInput(input){
 		numbers[position] = "";
 	}
 	numbers[position] += input.target.id;
-	console.log(numbers[position]);
+	updateDisplay(numbers[position]);
 }
 
 function updateDisplay(data){
@@ -69,21 +70,22 @@ function makeCalc(numbers, operation, storeResult){
 	switch (operation){
 		case "addition":
 			result = add(intArray[0], intArray[1]);
-			updateDisplay(result);
 			break;
 		case "multiply":
 			result = multiply(intArray[0], intArray[1]);
-			updateDisplay(result);
 			break;
 		case "substract":
 			result = substract(intArray[0], intArray[1]);
-			updateDisplay(result);
 			break;
 		case "divide":
+			if (intArray[1]=== 0){
+				result = "ERROR DIVIDE BY 0";
+				break;
+			}
 			result = divide(intArray[0], intArray[1]);
-			updateDisplay(result);
 			break;
 	}
+	updateDisplay(result);
 	if (storeResult){
 		numbers[0] = result;
 	}
@@ -92,4 +94,20 @@ function makeCalc(numbers, operation, storeResult){
 		position = 0;
 	}
 	numbers[1] = 0;
+}
+
+function resetCalc(){
+	numbers[0] =0;
+	numbers[1] =0;
+	operation = undefined;
+	position = 0;
+	updateDisplay("0");
+}
+
+function deleteLastEl(){
+	numbers[position] = numbers[position].slice(0, -1);
+	if (numbers[position].length === 0){
+		numbers[position] = 0;
+	}
+	updateDisplay(numbers[position]);
 }
