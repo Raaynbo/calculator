@@ -1,0 +1,70 @@
+body{
+	margin:0;
+	padding:0;
+	width:100vw;
+	height:100vh;
+}
+
+main{
+	width:100%;
+}
+
+.container {
+	display:flex;
+	flex-direction:column;
+	gap:10px;
+	justify-content:center;
+	align-items:center;
+	height:100vh;
+	width:35vw;
+	margin:0 auto;
+}
+
+.pad{
+	display:flex;
+	justify-content:center;
+	gap: 30px;
+}
+
+.numpad{
+	width:80%;
+	max-width:25vw;
+	justify-content:center;
+	display:flex;
+	flex-wrap: wrap;
+	align-items:center;
+	gap:30px;
+}
+
+.operatorpad {
+	display:flex;
+	flex-direction:column;
+	gap:10px;
+}
+
+.btn {
+	padding: 1rem 2rem;
+	text-align:center;
+	outline:solid 1px black;
+	font-size:22px;
+}
+
+.operator {
+	padding:1.5rem 2.5rem;
+}
+
+.digit{
+	padding:1.6rem 2rem;
+}
+
+.output {
+	font-size:50px;
+	text-align:right;
+	outline: solid 1px black;
+	width:100%;
+	padding: 5px;
+}
+
+.empty {
+	color:gray;
+}

@@ -1,0 +1,32 @@
+body{
+	margin:0;
+	padding:0;
+	width:100vw;
+	height:100vh;
+}
+
+main{
+	width:100%;
+}
+
+.container {
+	display:flex;
+	flex-direction:column;
+	gap:10px;
+	justify-content:center;
+	align-items:center;
+	height:100vh;
+}
+
+.pad{
+	width:40%;
+	display:flex;
+	flex-wrap: wrap;
+	gap:50px;
+}
+
+.btn {
+	padding: 0.5rem 2rem;
+	background-color: grey;
+	font-size:22px;
+}
