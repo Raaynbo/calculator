@@ -4,6 +4,7 @@ const numbers = [undefined, undefined];
 // position is an integer used to define if the user is selecting the first or the second number 
 let position = 0;
 let operation = undefined;
+let dotCount = 0;
 
 const display = document.querySelector(".display");
 const numpad = document.querySelectorAll(".digit");
@@ -21,6 +22,7 @@ operators.forEach(op => {
 		}else {
 			position = 1;
 		}
+		dotCount=0;
 		operation = e.target.id;
 
 	})
@@ -31,26 +33,33 @@ egal.addEventListener("click", () => {
 });
 
 function add(a, b){
-	return a+b.toFixed(2);
+	return (a+b).toFixed(2);
 }
 
 function substract(a, b){
-	return a-b.toFixed(2);
+	return (a-b).toFixed(2);
 }
 
 function divide(a, b){
-	return a/b.toFixed(2);
+	return (a/b).toFixed(2);
 }
 
 function multiply(a, b){
-	return a*b.toFixed(2);
+	return (a*b).toFixed(2);
 }
 
 function getInput(input){
 	if (numbers[position] === undefined){
 		numbers[position] = "";
 	}
-	numbers[position] += input.target.id;
+	if (input.target.id === "."){
+		if (dotCount === 0){
+			numbers[position] += input.target.id;
+			dotCount++;
+		}
+	}else{
+		numbers[position] += input.target.id;
+	}
 	updateDisplay(numbers[position]);
 }
 
@@ -61,6 +70,7 @@ function updateDisplay(data){
 function makeCalc(numbers, operation, storeResult){
 	let result = 0;
 	const intArray = numbers.map(value => {return parseFloat(value)});
+	console.log(intArray);
 	switch (operation){
 		case "addition":
 			result = add(intArray[0], intArray[1]);
